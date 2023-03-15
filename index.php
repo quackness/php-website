@@ -9,7 +9,8 @@
 <body>
   <h3>Welcome to the library</h3>
   <?php
-  date_default_timezone_set('UTC');
+    date_default_timezone_set('UTC');
+    echo "time is " . date("h:i:s") . "<br>";
   ?>
   <a href="booksearch.html">Browse our books</a>
 
