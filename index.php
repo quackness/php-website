@@ -15,8 +15,8 @@
   <a href="booksearch.html">Browse our books</a>
 
   <form action="/contactus.php" method="POST">
-    <label for="email">Your email:</label>
-    <input type="email" name="email" id="email">
+    <label for="customeremail">Your email:</label>
+    <input type="email" name="customeremail" id="customeremail">
 
     <label for="message">Your message:</label>
     <textarea name="message" id="message"></textarea>
