@@ -14,6 +14,22 @@
   ?>
   <a href="booksearch.html">Browse our books</a>
 
+  <form action="/contactus.php" method="GET">
+    <label for="email">Your email:</label>
+    <input type="email" name="email" id="email">
+
+    <label for="message">Your message:</label>
+    <textarea name="message" id="message"></textarea>
+
+    <label for="replyWanted"> Do you want a reply?</label>
+    <input type="checkbox" id="replyWanted" name="replyWanted">
+
+    <input type="submit" name="submit" value="Send message">
+  </form>
+
+
+
+
   
 </body>
 </html>
