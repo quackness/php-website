@@ -28,6 +28,25 @@
     printf("We had a problem: %s\n", $e->getMessage());
   }
 
+  #build the query, users can search for: title, author or both
+  $query = " select * from books";
+  if ($searchtitle && !$searchauthor) {
+    $query = $query . " where title like '%" . $searchtitle . "%'";
+  }
+  if (!$searchtitle && $searchauthor) {
+    $query = $query . " where author like '%" . $searchauthor . "%'";
+  }
+  if ($searchtitle && $searchauthor) {
+    $query = $query . " where title like '%" . $searchtitle . "%' and author like '%" . $searchauthor . "%'";
+  }
+
+  printf ("Debug: running the query %s <br>", $query);
+
+  
+
+
+
+
 
   ?>
   
