@@ -18,6 +18,17 @@
     printf ("You must specify either a title or an author");
     exit();
   }
+
+  #open the database, cathc errors
+  try {
+    $db = new PDO("mysql:host=localhost;dbname=library", "root_library", "rootpw");
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  }
+  catch (PDOException $e) {
+    printf("We had a problem: %s\n", $e->getMessage());
+  }
+
+
   ?>
   
 </body>
