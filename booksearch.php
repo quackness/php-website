@@ -9,8 +9,15 @@
 <body>
   <h3>Book Search Results</h3>
   <?php
-
   //this is a pdo version
+  //get the data from the form and secure the error
+  $searchtitle = trim($_POST['searchtitle']);
+  $searchauthor = trim($_POST['searchuthor']);
+
+  if (!$searchtitle && !$searchauthor) {
+    printf ("You must specify either a title or an author");
+    exit();
+  }
   ?>
   
 </body>
