@@ -1,6 +1,6 @@
 <?php
-$searchtitle = "Girl";
-$searchauthor = "Larsson";
+$searchtitle = "Dodger";
+$searchauthor = "Terry T.";
 try {
   $db = new PDO("mysql:host=localhost;dbname=library", "root_library", "rootpw");
 
@@ -14,7 +14,17 @@ try {
     }
     break;
 
+    case 2:
+      //use a prepeared statement with paramaters bound by postion - method 1
+      $stmt=$db->prepare("select * from books where title like ? and author like ?");
+      $stmt->execute(array("$searchtitle", "$searchauthor"));
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        printf("%-40s %-20s\n", $row["title"], $row["author"]);
+      }
+    break;
+
 
   
   }
 }
+?>
