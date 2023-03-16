@@ -13,20 +13,22 @@
     echo "You did not enter an email address";
     exit;
   }
-  $customeremail = $_POST["customeremail"];
+  // $customeremail = $_POST["customeremail"];
   // if (! ereg("[a-z]+@[a-z]+\.[a-z]+", $_POST["customeremail"])) {
   //   echo "Email address is not valid";
   //   exit;
   // }
 
-  if (!preg_match("~([a-zA-Z0-9!#$%&'*+-/=?^_`{|}~])@([a-zA-Z0-9-]).([a-zA-Z0-9]{2,4})~", 
-  $_POST["customeremail"])) {
-    echo 'This is an invalid email.';
-    exit;
-  }
+  // if (!preg_match("~([a-zA-Z0-9!#$%&'*+-/=?^_`{|}~])@([a-zA-Z0-9-]).([a-zA-Z0-9]{2,4})~", 
+  // $_POST["customeremail"])) {
+  //   echo 'This is a valid email.';
+  // } else {
+  //   echo 'This is an invalid email.';
+  //   exit;
+  // }
 
   //get the data for the form, this version does not have error checking
-  // $customeremail = $_POST["customeremail"];
+  $customeremail = $_POST["customeremail"];
   $message = $_POST["message"];
   $replyWanted = false;
   if (isset($_POST["replayWanted"])) $replyWanted=true;
