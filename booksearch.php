@@ -11,8 +11,12 @@
   <?php
   //this is a pdo version
   //get the data from the form and secure the error
+
   $searchtitle = trim($_POST['searchtitle']);
-  $searchauthor = trim($_POST['searchuthor']);
+  $searchauthor = trim($_POST['searchauthor']);
+
+// $searchtitle  = addslashes($searchtitle);
+// $searchauthor = addslashes($searchauthor);
 
   if (!$searchtitle && !$searchauthor) {
     printf ("You must specify either a title or an author");
@@ -42,12 +46,25 @@
 
   printf ("Debug: running the query %s <br>", $query);
 
-  
+  try {
+    $sth = $db->query($query);
+    $bookcount = $sth->rowCount();#onlyworks for mysql
+    if ($bookcount == 0) {
+    printf("Sorry, we did not find any books");
+    exit;
+    }
+  printf('<table background-color="red" cellpadding="6">');
+  printf('<tr><b><td>Title</td> <td>Author</td></b></tr>');
+  while($row = $sth->fetch(PDO::FETCH_ASSOC)) {
+    printf("<tr><td> %s </td> <td> %s </td> </tr>", $row["title"], $row["author"]);
+  }
 
-
-
-
-
+  }
+  catch (PDOException $e) {
+    printf("We had a problem: %s\n", $e->getMessage());
+  }
+  printf("</table>");
+  printf("<br> We found %s mathcing books", $bookcount);
   ?>
   
 </body>
