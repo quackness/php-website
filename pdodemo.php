@@ -57,9 +57,8 @@ try {
   // printf("%d rows deleted\n", $stmt->rowCount());
 
   //case 10 //execute a summary function
-  $stmt= $db->query("select count(*) from books where author like '%Dickens'");
-  printf("we have %d books by Dickens\n", $stmt->fetchColumn());
-
+  // $stmt= $db->query("select count(*) from books where author like '%Dickens'");
+  // printf("we have %d books by Dickens\n", $stmt->fetchColumn());
 
 
 }
