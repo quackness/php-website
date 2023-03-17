@@ -46,9 +46,15 @@ try {
   // }
 
   //case 8: execute a non-query Insert
-  $stmt = $db->prepare("insert into borrowers (name, address) values " . "(:name, :address)");
-  $stmt->execute(array(":name" => "Harold Wilson", ":address" => "10 Downing Street"));
-  $stmt->execute(array(":name" => "Bill Clinton", ":address" => "1600 Pensylvania Ave"));
+  // $stmt = $db->prepare("insert into borrowers (name, address) values " . "(:name, :address)");
+  //run:
+  // $stmt->execute(array(":name" => "Harold Wilson", ":address" => "10 Downing Street"));
+  // $stmt->execute(array(":name" => "Bill Clinton", ":address" => "1600 Pensylvania Ave"));
+
+  //case 9 execute DELETE with a param bound by a postion
+  $stmt= $db->prepare("delete from borrowers where address = ?");
+  $stmt->execute(array("10 Downing Street"));
+  printf("%d rows deleted\n", $stmt->rowCount());
 
 
 }
