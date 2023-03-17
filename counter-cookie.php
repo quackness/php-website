@@ -7,6 +7,7 @@
   $count = $count + 1;
   //order: cookie name, cookie value, expiration, cookie applies to whole site, the site it applies to and send cookie evn on insecure connection
   //the url was left blank since I am not hosting it 
+  //if you leave time as 0 it will die after we close a browser
   setcookie('counter', $count, time() + 24*3600, '/',
             '', false);
 ?>
