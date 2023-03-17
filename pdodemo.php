@@ -29,21 +29,27 @@ try {
   //     break;
 
   //case 5: use a prepared statement with parameters bound by name method 2
-  $stmt = $db->prepare("select * from books where title regexp :title " . "and author regexp :author");
+  // $stmt = $db->prepare("select * from books where title regexp :title " . "and author regexp :author");
 
-  $stmt->bindParam(':title', $searchtitle);
-  $stmt->bindParam(':author', $searchauthor);
-  $stmt->execute();
-  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    printf("%-40s %-20s\n", $row["title"], $row["author"]);
-  }
-  //to query for another book reassign the new values and rexecute
-  $searchtitle = "Dune";
-  $searchauthor = "Frank H.";
-  $stmt->execute();
-  while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    printf("%-40s %-20s\n", $row["title"], $row["author"]);
-  }
+  // $stmt->bindParam(':title', $searchtitle);
+  // $stmt->bindParam(':author', $searchauthor);
+  // $stmt->execute();
+  // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  //   printf("%-40s %-20s\n", $row["title"], $row["author"]);
+  // }
+  // //to query for another book reassign the new values and rexecute
+  // $searchtitle = "Dune";
+  // $searchauthor = "Frank H.";
+  // $stmt->execute();
+  // while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  //   printf("%-40s %-20s\n", $row["title"], $row["author"]);
+  // }
+
+  //case 8: execute a non-query Insert
+  $stmt = $db->prepare("insert into borrowers (name, address) values " . "(:name, :address)");
+  $stmt->execute(array(":name" => "Harold Wilson", ":address" => "10 Downing Street"));
+  $stmt->execute(array(":name" => "Bill Clinton", ":address" => "1600 Pensylvania Ave"));
+
 
 }
 
