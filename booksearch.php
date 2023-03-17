@@ -76,11 +76,11 @@
         $reserveanchor
       );
     }
-    printf('<table background-color="red" cellpadding="6">');
-    printf('<tr><b><td>Title</td> <td>Author</td></b></tr>');
-    while($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-      printf("<tr><td> %s </td> <td> %s </td> </tr>", $row["title"], $row["author"]);
-    }
+    // printf('<table background-color="red" cellpadding="6">');
+    // printf('<tr><b><td>Title</td> <td>Author</td></b></tr>');
+    // while($row = $sth->fetch(PDO::FETCH_ASSOC)) {
+    //   printf("<tr><td> %s </td> <td> %s </td> </tr>", $row["title"], $row["author"]);
+    // }
   
   } 
   
