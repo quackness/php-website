@@ -52,9 +52,14 @@ try {
   // $stmt->execute(array(":name" => "Bill Clinton", ":address" => "1600 Pensylvania Ave"));
 
   //case 9 execute DELETE with a param bound by a postion
-  $stmt= $db->prepare("delete from borrowers where address = ?");
-  $stmt->execute(array("10 Downing Street"));
-  printf("%d rows deleted\n", $stmt->rowCount());
+  // $stmt= $db->prepare("delete from borrowers where address = ?");
+  // $stmt->execute(array("10 Downing Street"));
+  // printf("%d rows deleted\n", $stmt->rowCount());
+
+  //case 10 //execute a summary function
+  $stmt= $db->query("select count(*) from books where author like '%Dickens'");
+  printf("we have %d books by Dickens\n", $stmt->fetchColumn());
+
 
 
 }
