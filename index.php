@@ -14,6 +14,6 @@
 <br>
 <A href="colour-chooser.php">Select colour preference</A>
 <br>
-<A href="contactus.html">Contact Us</a>
+<A href="contactform.html">Contact Us</a>
 </body>
 </html>
