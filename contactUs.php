@@ -23,7 +23,7 @@
     $t = $t . "No reply was requested";
   
     #send email
-  mail("root_library @localhost", "Customer Message", $t);
+  mail("root_library@localhost", "Customer Message", $t);
 
   echo "Thank you. Your message has been sent."
   ?>
