@@ -8,7 +8,7 @@
 <IMG src="images/library.jpg" width="300" height="200" >
 <hr>
 <h3> Welcome to the Library! </h3>
-<A href="searchForm.php">Browse our books</A>
+<A href="searchForm.html">Browse our books</A>
 <br>
 <A href="showreservedbooks.php">Show my reserved books</A>
 <br>
