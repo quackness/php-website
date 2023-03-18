@@ -21,6 +21,7 @@
   if (isset($_GET['colourchosen'])) {
     // This is the postback so just thank the user
     echo "Your colour preference has been recorded";
+    echo "<br><a href=index.php>Return to home page</a>";
     exit;
   }
   // Not a postback, so present the colour selection form:
