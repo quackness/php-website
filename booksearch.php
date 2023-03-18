@@ -52,6 +52,8 @@
     $bookcount = $sth->rowCount(); #onlyworks for mysql
     if ($bookcount == 0) {
       printf("Sorry, we did not find any books");
+      printf("<br><a href=index.php>Back to home page</a>");
+
       exit;
     }
 
