@@ -1,35 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library Home Page</title>
 </head>
 <body>
-  <h3>Welcome to the library</h3>
-  <?php
-    date_default_timezone_set('UTC');
-    echo "time is " . date("h:i:s") . "<br>";
-  ?>
-  <a href="booksearch.html">Browse our books</a>
-
-  <form action="contactUs2.php" method="POST">
-    <label for="customeremail">Your email:</label>
-    <input type="email" name="customeremail" id="customeremail">
-
-    <label for="message">Your message:</label>
-    <textarea name="message" id="message"></textarea>
-
-    <label for="replyWanted"> Do you want a reply?</label>
-    <input type="checkbox" id="replyWanted" name="replyWanted">
-
-    <input type="submit" name="submit" value="Send message">
-  </form>
-
-
-
-
-  
+<IMG src="images/library.jpg" width="300" height="200" >
+<hr>
+<h3> Welcome to the Library! </h3>
+<A href="searchForm.php">Browse our books</A>
+<br>
+<A href="showreservedbooks.php">Show my reserved books</A>
+<br>
+<A href="colour-chooser.php">Select colour preference</A>
+<br>
+<A href="contactus.html">Contact Us</a>
 </body>
 </html>
